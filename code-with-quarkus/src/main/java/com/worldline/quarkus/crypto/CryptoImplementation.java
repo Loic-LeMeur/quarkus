@@ -1,5 +1,6 @@
 package com.worldline.quarkus.crypto;
 
+import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
@@ -12,7 +13,7 @@ public class CryptoImplementation {
         char newChar;
         for (int i=0; i<length; i++){
             int castAscii = (int) input[i];
-            System.out.println("Code ascii de "+input[i]+" : "+ castAscii);
+            Log.info("Code ascii de "+input[i]+" : "+ castAscii);
             newValue = castAscii + 3;
             newChar = (char) newValue;
             cipher += newChar;
@@ -27,7 +28,7 @@ public class CryptoImplementation {
         char newChar;
         for (int i=0; i<length; i++){
             int castAscii = (int) input[i];
-            System.out.println("Code ascii de "+input[i]+" : "+ castAscii);
+            Log.info("Code ascii de "+input[i]+" : "+ castAscii);
             newValue = castAscii - 3;
             newChar = (char) newValue;
             cipher += newChar;
